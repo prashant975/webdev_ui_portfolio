@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Showcase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(45deg,#9ce679,#b182b1,#e4c57d,#f6b7d6,#62a596,#86e7b0);
+            background-size: 300% 300%;
+            animation: bgcolor 10s infinite alternate ease-in-out;
+            font-family: 'Poppins', sans-serif;
+        }
+        @keyframes bgcolor {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .container-custom {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+            margin: 50px auto;
+            transition: transform 0.3s;
+        }
+        .container-custom:hover {
+            transform: scale(1.02);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.02);
+        }
+        details {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            font-weight: bold;
+        }
+        details summary {
+            transition: color 0.3s;
+        }
+        details:hover summary {
+            color: #4e54c8;
+        }
+        button {
+            background: linear-gradient(90deg, #ff8c00, #ff4b2b);
+            color: white;
+            width: 100%;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #ff4b2b, #ff8c00);
+            transform: translateY(-2px);
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            font-size: 35px;
+            cursor: pointer;
+            color: gray;
+            transition: color 0.3s ease-in-out;
+        }
+        .rating input:checked ~ label,
+        .rating input:hover ~ label,
+        .rating input:hover ~ label ~ label {
+            color: gold;
+        }
+        .feedback {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="bg-dark text-white text-center py-4 w-100">📚 BOOK SHOWCASE 📚</h1>
+    <div class="container-custom">
+        <h4 class="text-center text-primary">Computer Systems</h4>
+        <img src="../public/javascript.png" alt="javascript Book">
+        <details><summary>📖 Genre</summary><ul><li>Technology</li><li>Education</li></ul></details>
+        <details><summary>✍️ Authors</summary><p>Kirupa Chinnathambi</p></details>
+        
+        <details><summary>📚 Overview</summary><p>Make the most of today's JavaScript--even if you've never programmed anything before. JavaScript Absolute Beginner's Guide, 3rd Edition is the fastest way to learn JavaScript, starting with the basics and gradually going deeper and broader into all the techniques you need to begin building highly scalable, performant web apps and experiences. Do what you want, the way you want, one incredibly easy step at a time!</p></details>
+        <details><summary>Features</summary><li> Start fast with the basics: values, variables, functions, conditionals, loops, closures, and more</li>
+            <li>Create well-organized, clear code that's easy to reuse and improve</li>
+            <li>Learn proven best practices to build web apps that scale with outstanding performance</li>
+             <li>Make the most of powerful object-oriented techniques to build complex, extensible apps</li>
+             <li>Wrangle data like a pro by learning how to use the popular JSON standard, arrays, web storage, and more</li>
+        </details>
+        <details><summary>🏢 Publisher</summary><p>Pearson Education</p></details>
+        <details><summary>🛒 Buy Now</summary><p><a href="https://www.amazon.in/JavaScript-Absolute-Beginners-Experience-Necessary/dp/9361592017/ref=sr_1_1_sspa?crid=2QE7WV61EJ7I3&dib=eyJ2IjoiMSJ9.H30ZhJJRQCW-zbwM-yQYpvFGVla2cbhrpsWrOl4YPjQuTih_w-pnOCvdvYkXxOA4sfKQSVzqWuPlx4VWFvqG1PYIyaNG4Q6rwqhhNo4JrbapvcrYsArd948PRvTFQlrfRSQJZjmfmTm3Om5lEn-8VTDvB8MvM6SZsLlRQStnhTKl2XjXHmTtYzeb76dMqJdNtzAS2sEsCojO-DnTQ5Nl_YYza9j_QjjNKQS1YguGSc0.pFASUwPUm4hNkU1Hh1mezqZMEebPl7_VpuhXg4BClrs&dib_tag=se&keywords=javascript+book&qid=1742319333&s=books&sprefix=java%2Cstripbooks%2C244&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank">Amazon</a></p></details>
+        
+        <div class="feedback">
+            <h5 class="text-center text-success">💬 Give Your Feedback</h5>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="feedback" class="form-label">Feedback:</label>
+                    <textarea class="form-control" id="feedback" rows="3" required></textarea>
+                </div>
+                <div class="text-center">
+                    <label class="form-label">⭐ Rate this Book:</label>
+                    <div class="rating d-flex justify-content-center gap-2">
+                        <input type="radio" name="star" id="star5"><label for="star5">★</label>
+                        <input type="radio" name="star" id="star4"><label for="star4">★</label>
+                        <input type="radio" name="star" id="star3"><label for="star3">★</label>
+                        <input type="radio" name="star" id="star2"><label for="star2">★</label>
+                        <input type="radio" name="star" id="star1"><label for="star1">★</label>
+                    </div>
+                </div>
+                <button type="submit">🚀 SEND FEEDBACK</button>
+            </form>
+        </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3 w-100">&copy; 2025 Book Showcase | All rights reserved</footer>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
